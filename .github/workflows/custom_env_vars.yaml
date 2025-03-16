@@ -16,7 +16,5 @@ jobs:
           echo "$Greeting $Firstname. Today is $DAY_OF_WEEK"
           echo "testvar is $testvar"
           echo "testvar is ${{ env.testvar }}"
-        env:
-            Firstname: Student
-            testvar: value-3  
+
       
