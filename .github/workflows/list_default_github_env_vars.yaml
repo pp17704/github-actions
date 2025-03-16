@@ -15,7 +15,7 @@ jobs:
     steps:
       - run: env
 
-  windows-environment-variables:
+  windows-environment-variables1:
      runs-on: windows-latest
      steps:
         #print all environment variables
