@@ -1,0 +1,26 @@
+name: 'passing values to next jobs'
+on:
+  workflow_dispatch:
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.step1.ioutputs.test}}
+      output2: ${{ steps.step1.ioutputs.test2}}
+    steps:
+      - name: step1
+        id: step1
+        run: echo "::set-output name=test::Hello"
+      - name: step2
+        id: step2
+        run: echo "::set-output name=test2::World"
+  
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+      - name: print-values
+        run: |
+          echo " printing values from job1"
+          echo "output1 is ${{ needs.job1.outputs.output1 }}"
+          echo "output2 is ${{ needs.job1.outputs.output2 }}"
