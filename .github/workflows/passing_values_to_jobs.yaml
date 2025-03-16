@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       output1: ${{ steps.step1.outputs.test}}
-      output2: ${{ steps.step1.outputs.test2}}
+      output2: ${{ steps.step2.outputs.test2}}
     steps:
       - name: step1
         id: step1
