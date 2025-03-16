@@ -11,7 +11,7 @@ jobs:
       - name: create-variables
         id: var_source_step
         run: |
-          echo "::set-ouput name=var1_name::Techschool"
+          echo "::set-output name=var1_name::Techschool"
           echo "::set-output name=var2_name::$(date +%Y-%m-%d)"
       - name: get-variable-value
         run: |
@@ -19,5 +19,5 @@ jobs:
           echo "var1_name is ${{ steps.var_source_step.outputs.var1_name }}"
           echo "var2_name is ${{ steps.var_source_step.outputs.var2_name }}"
           echo "variableName is $variableName"
-          
+
         
